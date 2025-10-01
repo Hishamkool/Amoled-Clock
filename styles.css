@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=ADLaM%20Display:wght@400&display=swap');
+
+body {
+    background-color: black;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+main span {
+
+    /*     min-width: 200px; */
+    text-align: center;
+    font-size: 15vw;
+    font-family: 'ADLaM Display', cursive;
+    will-change: transform;
+    -webkit-text-stroke: 1px white;
+    color: black;
+    animation: moveClock 0.5s alternate 20 both;
+
+
+}
+
+@keyframes moveClock {
+    from {
+        transform: translate3d(0deg);
+    }
+
+    to {
+        transform: translate3d(360deg);
+    }
+}
+
+#clock {
+    display: flex;
+    align-items: center;
+}
+
+#seperator {
+    font-size: 5vw;
+    font-weight: bold;
+    padding-inline: 15px ;
+}
+#ampm{
+    padding-left: 15px;
+}
+
+#seconds {
+    display: flex;
+    flex-direction: row; 
+    justify-content: end;
+    font-size: max(4vw, 50px);
+   
+}
