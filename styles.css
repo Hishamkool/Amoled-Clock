@@ -20,7 +20,7 @@ main span {
     font-size: 15vw;
     font-family: 'ADLaM Display', cursive;
     will-change: transform;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: max(0.16vw,0.6px) white;
     color: black;
     animation: moveClock 0.5s alternate 20 both;
 
