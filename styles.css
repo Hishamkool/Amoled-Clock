@@ -9,6 +9,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    height: 100dvh;
 
 }
 
@@ -44,16 +45,17 @@ main span {
 #seperator {
     font-size: 5vw;
     font-weight: bold;
-    padding-inline: 15px ;
+    padding-inline: 15px;
 }
-#ampm{
+
+#ampm {
     padding-left: 15px;
 }
 
 #seconds {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: end;
     font-size: max(4vw, 50px);
-   
+
 }

@@ -19,6 +19,7 @@ function updateTime() {
         nowHour = 12;
     }
     if (nowHour >= 12) {
+        nowHour = nowHour - 12;
         nowAmPm = "PM";
     } else {
         nowAmPm = "AM";

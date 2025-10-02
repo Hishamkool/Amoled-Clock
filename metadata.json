@@ -2,11 +2,11 @@
     "name": "AMOLED Clock",
     "short_name": "Clock",
     "description": "A simple always-on AMOLED friendly digital clock.",
-    "start_url": "./index.html",
-    "display": "standalone",
+    "start_url": "./index.html", 
     "background_color": "#000000",
     "theme_color": "#000000",
-    "orientation": "portrait",
+    "orientation": "any",
+    "display": "fullscreen",
     "icons": [
         {
             "src": "assets/images/clock_192.png",
