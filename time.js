@@ -19,7 +19,7 @@ const fonts = [
     "Inter, sans-serif"
 ];
 let currentFontIndex = 0;
-updateTime();
+
 function updateTime() {
     const now = new Date();
     let nowHour = now.getHours();
@@ -38,20 +38,17 @@ function updateTime() {
     minutes.textContent = nowMin;
     seconds.textContent = nowSec;
     ampm.textContent = nowAmPm;
-
-
 }
-/* updating the fonts */
 
+/* updating the fonts */
 function updateFont() {
     document.body.style.fontFamily = fonts[currentFontIndex];
     currentFontIndex = (currentFontIndex + 1) % fonts.length;
     console.log(`changing font to ${fonts[currentFontIndex]}`);
-
-
 }
 
 
+updateTime();
 /* to update time every second */
 setInterval(updateTime, 1000);
 
@@ -80,3 +77,13 @@ document.addEventListener("visibilitychange", () => {
         requestWakeLock();
     }
 })
+
+/* making the clock animate when tapped on the clock */
+clock.addEventListener("click", () => {
+    clock.classList.toggle("movingAnimationEnable");
+});
+
+/* to enable or disable seconds */
+seconds.addEventListener("click", () => {
+    seconds.classList.toggle("visibility");
+});

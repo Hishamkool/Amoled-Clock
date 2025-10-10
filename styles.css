@@ -3,14 +3,15 @@
 body {
     background-color: black;
     color: white;
-    /*  display: flex;
-    flex-direction: column; */
-    /* align-items: center;
-    justify-content: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     height: 100dvh;
     font-family: 'ADLaM Display', cursive;
     overflow: hidden;
+    scrollbar-width: 0;
 }
 
 #clock {
@@ -19,39 +20,60 @@ body {
     /* text-align: center; */
     font-size: 15vw;
     will-change: transform;
-     
-    /* -webkit-text-stroke: max(0.16vw, 0.6px) white; */
-    color: white;
-    animation: moveClock 15s ease-in-out alternate infinite both;
+    animation: fadeClock 2s ease-in-out alternate infinite both;
+    -webkit-text-stroke: max(0.16vw, 0.6px) white;
+    color: transparent;
+}
 
+@keyframes fadeClock {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.6;
+    }
+}
+
+#clock.movingAnimationEnable {
+    animation: moveClock 15s ease-in-out alternate infinite both;
+    color: white;
+    -webkit-text-stroke: transparent;
 
 }
 
 @keyframes moveClock {
     0% {
         transform: translate(0, 0);
+        /* center */
     }
 
-
-    25% {
-        transform: translate(36vw, 0);
+    20% {
+        transform: translate(-36vw, -30vh);
+        /* top-left */
     }
 
-
-    50% {
-        transform: translate(0, 60vh);
+    40% {
+        transform: translate(36vw, -30vh);
+        /* top-right */
     }
 
-
-    75% {
-        transform: translate(36vw, 60vh);
+    60% {
+        transform: translate(36vw, 30vh);
+        /* bottom-right */
     }
 
+    80% {
+        transform: translate(-36vw, 30vh);
+        /* bottom-left */
+    }
 
     100% {
         transform: translate(0, 0);
+        /* back to center */
     }
 }
+
 
 
 
@@ -65,8 +87,8 @@ body {
     font-size: 5vw;
     font-weight: bold;
     padding-inline: 15px;
-    color: transparent;
-    -webkit-text-stroke: 1px white;
+    /* color: transparent; */
+    /* -webkit-text-stroke: 1px white; */
 }
 
 #ampm {
@@ -79,5 +101,11 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: -1;
+    animation: fadeClock 1s infinite both;
+    cursor: pointer;
+    visibility: visible;
+}
+
+#seconds.visibility {
+    visibility: hidden;
 }
