@@ -1,10 +1,24 @@
-
+const clock = document.getElementById("clock");
 const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
 const ampm = document.getElementById("ampm");
 
-
+const fonts = [
+    "Poppins, sans-serif",
+    "Roboto, sans-serif",
+    "Open Sans, sans-serif",
+    "Lato, sans-serif",
+    "Montserrat, sans-serif",
+    "Raleway, sans-serif",
+    "Playfair Display, serif",
+    "Merriweather, serif",
+    "Oswald, sans-serif",
+    "Source Sans Pro, sans-serif",
+    "Nunito, sans-serif",
+    "Inter, sans-serif"
+];
+let currentFontIndex = 0;
 updateTime();
 function updateTime() {
     const now = new Date();
@@ -24,9 +38,26 @@ function updateTime() {
     minutes.textContent = nowMin;
     seconds.textContent = nowSec;
     ampm.textContent = nowAmPm;
+
+
 }
+/* updating the fonts */
+
+function updateFont() {
+    document.body.style.fontFamily = fonts[currentFontIndex];
+    currentFontIndex = (currentFontIndex + 1) % fonts.length;
+    console.log(`changing font to ${fonts[currentFontIndex]}`);
+
+
+}
+
+
 /* to update time every second */
 setInterval(updateTime, 1000);
+
+
+/* enable if you need to change fonts */
+// setInterval(updateFont, 3000);
 
 
 /* to setup wake lock */
