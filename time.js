@@ -95,13 +95,13 @@ document.addEventListener("click", (e) => {
 });
 
 /* moving animation needs to be added  */
-clock.addEventListener("click", (e) => {
+/* clock.addEventListener("click", (e) => {
     e.stopPropagation(); // to not let this click go to its parent elemets
   
     // clock.classList.toggle("movingAnimationEnable");
 
 });
-
+ */
 
 /* to enable or disable seconds */
 seconds.addEventListener("click", () => {
