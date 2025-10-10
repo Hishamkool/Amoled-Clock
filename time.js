@@ -54,7 +54,7 @@ setInterval(updateTime, 1000);
 
 
 /* enable if you need to change fonts */
-// setInterval(updateFont, 3000);
+setInterval(updateFont, 60000);
 
 
 /* to setup wake lock */
@@ -79,9 +79,29 @@ document.addEventListener("visibilitychange", () => {
 })
 
 /* making the clock animate when tapped on the clock */
-clock.addEventListener("click", () => {
-    clock.classList.toggle("movingAnimationEnable");
+
+
+document.addEventListener("click", (e) => {
+
+    if (!clock.contains(e.target)) {
+        clock.style.animation = `clickClock 1s ease-in both`;
+        /* after 3 seconds change to black again */
+        setTimeout(() => {
+            clock.style.animation = `clickClockReverse 1s ease-in both`;
+        }, 3000);
+    }
+
+
 });
+
+/* moving animation needs to be added  */
+clock.addEventListener("click", (e) => {
+    e.stopPropagation(); // to not let this click go to its parent elemets
+  
+    // clock.classList.toggle("movingAnimationEnable");
+
+});
+
 
 /* to enable or disable seconds */
 seconds.addEventListener("click", () => {
